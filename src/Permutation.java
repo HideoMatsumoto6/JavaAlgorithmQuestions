@@ -19,10 +19,13 @@ public class Permutation {
     public static void main(String[] args) {
         int[] P = {2,0,1,3};
         String[] originalArr = new String[]{"henry", "jimmy", "tom", "thrall"};
+
+        Character[] charArr = new Character[]{'A', 'B', 'C', 'D'};
         try {
             String[] targetArr = Permutation.applyPermutation(originalArr, P);
-            System.out.println(targetArr.length);
-            Arrays.stream(targetArr).forEach(System.out::println);
+            Character[] resultArr = Permutation.applyPermutation(charArr, P);
+            System.out.println(Arrays.toString(targetArr));
+            System.out.println(Arrays.toString(resultArr));
         } catch (Exception e) {
             System.out.println(e.toString());
             System.out.println("an exception is thrown");
