@@ -32,7 +32,6 @@ public class RemoveDuplicate {
     static int[] removeDuplicatesFromSortedArr(int[] sortedArr) {
         ArrayList<Integer> arrList = new ArrayList<Integer>();
         Set<Integer> duplciated = new HashSet<Integer>();
-        int pivot = 0;
         for(int i = 0; i < sortedArr.length; i++) {
             if(!duplciated.contains(sortedArr[i])) {
                 arrList.add(sortedArr[i]);

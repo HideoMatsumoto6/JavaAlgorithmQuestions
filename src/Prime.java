@@ -18,6 +18,7 @@ public class Prime {
                 if (isNumberPrime) {
                     resultPrimeArrLst.add(i);
                 }
+                // sift out the numbers that are a multiplier of this prime number
                 for (int m = 1; m <= Math.floor(num / i); m++) {
 
                     itemsToBeKickedOut.add(m * i);
