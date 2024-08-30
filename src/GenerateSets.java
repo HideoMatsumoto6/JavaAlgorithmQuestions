@@ -1,7 +1,11 @@
 import java.util.*;
 
 public class GenerateSets {
-    static Set<Set<Integer>> generateSubsetsOfLengthK(int[] nums, int k) {
+    static Set<Set<Integer>> generateSubsetsOfLengthK(int bound, int k) {
+        int[] nums = new int[bound];
+        for(int i = 0; i < nums.length; i++) {
+            nums[i] = i;
+        }
         Set<Set<Integer>> result = new HashSet<>();
         generateSubsets(nums, k, 0, new HashSet<>(), result);
         return result;
@@ -9,6 +13,7 @@ public class GenerateSets {
 
 
    public static void generateSubsets(int[] nums, int k, int index, Set<Integer> current, Set<Set<Integer>> result) {
+
         if(current.size()==k) {
             result.add(new HashSet<>(current));
             System.out.println(Arrays.toString(current.toArray()));
@@ -45,9 +50,7 @@ public class GenerateSets {
         System.out.println(hashM1 == hashM2);
 
 
-        int[] myArr = {3,6,8,9};
-        Set<Set<Integer>> result = generateSubsetsOfLengthK(myArr, 2);
-        System.out.println(Arrays.toString(result.toArray()));
+        Set<Set<Integer>> result = generateSubsetsOfLengthK(6, 2);
 
     }
 }
