@@ -6,8 +6,8 @@ public class GenerateSets {
         for(int i = 0; i < nums.length; i++) {
             nums[i] = i;
         }
-        Set<Set<Integer>> result = new HashSet<>();
-        generateSubsets(nums, k, 0, new HashSet<>(), result);
+        Set<Set<Integer>> result = new LinkedHashSet<>();
+        generateSubsets(nums, k, 0, new LinkedHashSet<>(), result);
         return result;
    }
 
@@ -15,7 +15,7 @@ public class GenerateSets {
    public static void generateSubsets(int[] nums, int k, int index, Set<Integer> current, Set<Set<Integer>> result) {
 
         if(current.size()==k) {
-            result.add(new HashSet<>(current));
+            result.add(new LinkedHashSet<>(current));
             System.out.println(Arrays.toString(current.toArray()));
             System.out.println(Arrays.toString(result.toArray()));
             return;
@@ -28,12 +28,12 @@ public class GenerateSets {
 
    }
     public static void main(String[] args) {
-        Set<Integer> hashSet1 = new HashSet<>();
+        Set<Integer> hashSet1 = new LinkedHashSet<>();
         hashSet1.add(1);
         hashSet1.add(2);
 
 
-        Set<Integer> hashSet2 = new HashSet<>();
+        Set<Integer> hashSet2 = new LinkedHashSet<>();
         hashSet2.add(1);
         hashSet2.add(2);
 
@@ -51,6 +51,7 @@ public class GenerateSets {
 
 
         Set<Set<Integer>> result = generateSubsetsOfLengthK(6, 2);
+        Set<Set<Integer>> result2 = generateSubsetsOfLengthK(11, 3);
 
     }
 }
