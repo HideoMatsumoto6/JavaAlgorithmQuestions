@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RemoveDuplicate {
     static int[] removeDuplicatesFromSortedArrRetainSortedArraySize(int[] sortedArr) {
@@ -24,7 +21,6 @@ public class RemoveDuplicate {
     public static void main(String[] args) {
         int[] arr =  { 2,3,5,5,7,11,11,11,13 };
         int[] res = RemoveDuplicate.removeDuplicatesFromSortedArrRetainSortedArraySize(arr);
-
         int[] result = RemoveDuplicate.removeDuplicatesFromSortedArr(arr);
     }
 
